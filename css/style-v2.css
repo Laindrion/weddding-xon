@@ -1,0 +1,889 @@
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+}
+
+html {
+   box-sizing: border-box;
+   font-size: 12px;
+   scroll-behavior: smooth;
+}
+
+html.active {
+   overflow: hidden;
+}
+
+html,
+body,
+main,
+section,
+header,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: 'Open Sans', Arial, sans-serif;
+   font-size: 18px;
+   font-weight: 300;
+   line-height: 1.5;
+   color: #333;
+   background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: 'Playfair Display', serif;
+   font-weight: 500;
+}
+
+ul,
+li {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+a {
+   color: black;
+   text-decoration: none;
+}
+
+.main {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+section {
+   padding: 40px 0;
+}
+
+.container {
+   width: 100%;
+   max-width: 1200px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+p {
+   font-size: 17px;
+   font-weight: 500;
+   font-family: 'Playfair Display', serif;
+}
+
+#sound-toggle {
+   position: fixed;
+   right: 15%;
+   bottom: 50px;
+
+
+   display: block;
+   width: 70px;
+   height: 70px;
+   z-index: 100;
+
+   img {
+      width: 100%;
+      height: 100%;
+
+      position: relative;
+      z-index: 100;
+
+      filter: contrast(0.5);
+   }
+
+   img:first-child {
+      display: none;
+   }
+}
+
+.music {}
+
+.title {
+   text-align: center;
+   font-size: 38px;
+   font-weight: 600;
+   text-transform: uppercase;
+
+   margin-bottom: 40px;
+}
+
+/* INTRODUCTION */
+.introduction {
+   display: none;
+
+   h1 {
+      font-family: "Great Vibes", cursive;
+
+      font-size: 48px;
+      line-height: 1.2;
+      letter-spacing: 3px;
+      /* text-transform: uppercase; */
+      text-shadow: 3px 1px 9px #3f3f3f;
+   }
+
+   p {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      margin: 20px 0;
+      letter-spacing: 2px;
+      font-weight: 400;
+      text-shadow: 3px 1px 9px #3f3f3f;
+   }
+}
+
+.introduction::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+
+   width: 100%;
+   height: 100%;
+   background-color: #000;
+
+   z-index: 1;
+   opacity: .4;
+}
+
+.introduction.active {
+   position: fixed;
+   top: 0;
+   left: 0;
+
+   width: 100%;
+   height: 100%;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+
+   text-align: center;
+
+   z-index: 100;
+
+   background: #fff;
+   background-image: url('../images/introduction-mobile.jpg');
+   background-size: cover;
+
+   user-select: none;
+
+
+   .container {
+      z-index: 101;
+      color: #fff;
+   }
+
+   /*  &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-box-shadow: 4px -6px 72px 38px rgba(255, 255, 255, 0.2) inset;
+      -moz-box-shadow: 4px -6px 72px 38px rgba(255, 255, 255, 0.2) inset;
+      box-shadow: 4px -6px 72px 38px rgba(255, 255, 255, 0.2) inset;
+      z-index: 101;
+
+   } */
+}
+
+.introduction-image {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+
+   img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 0 0;
+
+      filter: saturate(0);
+   }
+}
+
+
+#open {
+   cursor: pointer;
+   /* border: 1px solid #fff; */
+   padding: 10px 40px;
+   display: inline-block;
+   font-weight: 400;
+
+   transition: all 0.3s ease;
+
+   letter-spacing: 2px;
+   /*  color: #fff; */
+
+   background-color: #F0C004;
+   color: #353535da;
+
+   -webkit-box-shadow: 4px 4px 8px 0px #c9c9c9;
+   -moz-box-shadow: 4px 4px 8px 0px #c9c9c9;
+   box-shadow: 4px 4px 8px 0px #c9c9c9;
+
+
+   &:hover {
+      -webkit-box-shadow: 4px 4px 8px 0px #c9c9c900;
+      -moz-box-shadow: 4px 4px 8px 0px #c9c9c900;
+      box-shadow: 4px 4px 8px 0px #c9c9c900;
+   }
+}
+
+
+.btn:link,
+.btn:visited {
+   text-decoration: none;
+   display: inline-block;
+   transition: all .3s ease;
+}
+
+.btn:hover {
+   transform: translateY(-3px);
+   transition: all .3s ease;
+}
+
+.btn:active {
+   transform: translateY(-1px);
+
+   -webkit-box-shadow: 4px 4px 8px 0px #c9c9c900;
+   -moz-box-shadow: 4px 4px 8px 0px #c9c9c900;
+   box-shadow: 4px 4px 8px 0px #c9c9c900;
+
+   transition: all .3s ease;
+}
+
+.btn-white {
+   background-color: #F0C004;
+   color: #777;
+}
+
+.btn::after {
+   content: "";
+   display: inline-block;
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1;
+   transition: all .6s;
+}
+
+.btn-white::after {
+   background-color: #F0C004;
+}
+
+.btn:hover::after {
+   transform: scaleX(1.4) scaleY(1.6);
+   opacity: 0;
+}
+
+.btn-animated {
+   animation: moveInBottom 5s ease-out;
+   animation-fill-mode: backwards;
+}
+
+
+@keyframes moveInBottom {
+   0% {
+      opacity: 0;
+      transform: translateY(30px);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translateY(0px);
+   }
+}
+
+
+/* HERO SECTION */
+
+.hero {
+   padding-top: 90px;
+   /* min-height: 100vh; */
+}
+
+.hero-title,
+.big-text {
+   font-size: 70px;
+   text-align: center;
+   line-height: 1;
+
+   font-family: "Great Vibes", cursive;
+   font-weight: 400;
+   font-style: normal;
+
+   max-width: 350px;
+
+   margin: 0 auto;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.hero-text-cover .big-text {
+   margin: 0 auto;
+}
+
+.hero-content {
+   text-align: center;
+
+   img {
+      max-width: 295px;
+      /* 350px */
+      width: 100%;
+      height: auto;
+
+      /* filter: saturate(0); */
+   }
+}
+
+.hero-text-cover {
+   padding: 20px;
+
+   .countdown {
+      max-width: 600px;
+      margin: 80px auto;
+   }
+
+   p {
+      max-width: 600px;
+      /* max-width: 310px; */
+      margin: 40px 0;
+      font-size: 18px;
+      letter-spacing: 2px;
+   }
+
+   p:last-child {
+      margin-bottom: 0;
+   }
+}
+
+/* SINCERELY SECTION */
+.sincerely {
+   padding-top: 20px;
+   padding-bottom: 70px;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   .decoration-img:first-child {
+      margin-bottom: 150px;
+   }
+
+   .decoration-img:last-child {
+      margin-top: 150px;
+   }
+}
+
+.big-text {
+   margin: 20px 0;
+}
+
+/* CALENDAR SECTION */
+.calendar {
+   margin-top: -10vh;
+
+   .calendar__wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+
+      img {
+         width: 100%;
+         height: auto;
+      }
+   }
+}
+
+/* COUNTDOWN SECTION */
+.wedding-day {
+   padding-bottom: 10px;
+}
+
+.countdown-title {
+   font-size: 20px;
+   font-weight: 600;
+   letter-spacing: 2px;
+   margin-bottom: 20px;
+   text-align: center;
+
+   text-transform: uppercase;
+}
+
+.time-block {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 5px;
+}
+
+.countdown-timer {
+   display: flex;
+   justify-content: space-between;
+   gap: 50px;
+}
+
+.time-block span {
+   display: block;
+   font-size: 51px;
+   font-weight: 300;
+}
+
+.time-block small {
+   font-size: 16px;
+   letter-spacing: 1px;
+}
+
+/* BIG IMAGE SECTION */
+.big-image {
+   padding-top: 0px;
+}
+
+.big-image-cover {
+   max-width: 260px;
+   height: 100%;
+
+   padding: 0 15px;
+
+   img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+/* GATHERING SECTION */
+.gathering {
+   padding: 50px 0;
+   text-align: center;
+}
+
+.gathering-content {
+   display: flex;
+   align-items: center;
+   gap: 40px;
+
+   img {
+      display: block;
+      width: 80px;
+      height: auto;
+      margin-bottom: -30px;
+      float: left;
+   }
+}
+
+.gathering-time {
+   font-size: 30px;
+   font-weight: 600;
+   margin-bottom: 20px;
+
+   font-family: 'Playfair Display', serif;
+}
+
+/* MAP SECTION */
+.map {
+   text-align: center;
+
+   p {
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+      margin-top: 20px;
+   }
+
+   iframe {
+      max-width: 800px;
+      width: 100%;
+   }
+}
+
+.map-description {
+   position: relative;
+   z-index: 0;
+
+   text-align: left;
+   font-weight: 700;
+
+   &::before {
+      content: '';
+      position: absolute;
+      background-image: url('../images/location.png');
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      z-index: 1;
+   }
+}
+
+.map-open {
+   display: inline-block;
+   margin-top: 16px;
+   padding: 12px 18px;
+   background: #111;
+   color: #fff;
+   text-decoration: none;
+}
+
+/* DRESS CODE SECTION */
+.dress-code {
+   text-align: center;
+   padding: 0;
+
+   p {
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto 30px auto;
+   }
+}
+
+/* CONTACTS SECTION */
+.contacts {
+   text-align: center;
+   padding-bottom: 100px;
+
+   p {
+      max-width: 550px;
+      margin: 0 auto 30px auto;
+   }
+
+   .subtitle,
+   label:has(input[type="text"]) {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: left;
+
+      font-family: 'Playfair Display', serif;
+   }
+
+   label:has(input[type="text"]) {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+   }
+
+   label:has(input[type="radio"]) {
+      display: flex;
+      gap: 10px;
+   }
+
+   input[type="text"] {
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+
+      font-size: 16px;
+
+      border: none;
+      border-bottom: 1px solid #333;
+
+      width: 100%;
+      outline: none;
+   }
+
+   h3 {
+      text-align: left;
+   }
+
+   button {
+      padding: 15px 40px;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #fff;
+      background-color: #000;
+      border: none;
+      cursor: pointer;
+
+      display: block;
+      margin: 0 auto;
+      margin-top: 40px;
+      text-transform: uppercase;
+
+      transition: all 0.3s ease;
+
+      &:hover {
+         background-color: transparent;
+         outline: 1px solid #000;
+         color: #000;
+      }
+   }
+}
+
+/* FOOTER SECTION */
+.footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   padding: 40px 0;
+   text-align: center;
+   width: 100%;
+   height: 100vh;
+
+   color: #fff;
+
+   background-image: url('../images/introduction.jpg');
+   background-size: cover;
+   background-position: top;
+
+
+   position: relative;
+   z-index: 0;
+
+   h2 {
+      font-family: 'Miss Katherine', cursive;
+      font-size: 124px;
+
+      z-index: 100;
+   }
+}
+
+
+.footer::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #000;
+   opacity: .4;
+   z-index: -1;
+}
+
+/* ANIMATION SECTION */
+.motion-up {
+   opacity: 0;
+   transform: translateY(40px);
+}
+
+
+.blur-on-scroll {
+   opacity: 0;
+   filter: blur(8px);
+}
+
+/* DECORATION SECTION */
+.decoration-img {
+   display: block;
+   margin: 0 auto;
+
+   max-width: 200px;
+   width: 100%;
+}
+
+/* FONTS SECTION */
+@font-face {
+   font-family: 'Calmius';
+   src: local('Calmius Extra Bold'), local('Calmius-Extra-Bold'),
+      url('Calmius-ExtraBold.woff2') format('woff2'),
+      url('Calmius-ExtraBold.woff') format('woff'),
+      url('Calmius-ExtraBold.ttf') format('truetype');
+   font-weight: 800;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Love';
+   src: url('/fonts/Love.otf') format('opentype'),
+      url('/fonts/LoveRegular.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Vallentina';
+   src: url('/fonts/Vallentina.otf') format('opentype'),
+      url('/fonts/VallentinaRegular.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Miss Katherine';
+   src: local('../fonts/Miss Katherine'),
+      url('../fonts/Miss_Katherine-Script.otf') format('opentype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 870px) {
+   .gathering-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .gathering-time {
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1;
+   }
+
+   .gathering-content p {
+      max-width: 420px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #555;
+   }
+
+   .gathering-content img {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+
+      width: 70px;
+      height: auto;
+      align-self: center;
+   }
+
+   #sound-toggle {
+      right: 5%;
+      bottom: 30px;
+
+      width: 40px;
+      height: 40px;
+   }
+
+   .hero {
+      padding-top: 40px;
+      padding-bottom: 0px;
+      min-height: 100%;
+   }
+
+   .hero-text-cover p {
+      max-width: 310px;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   .wedding-day {
+      padding-top: 10px;
+   }
+}
+
+@media (max-width: 670px) {
+   .introduction-image img {
+      object-position: 0 0;
+   }
+}
+
+@media (max-width: 630px) {
+   body {
+      font-size: 16px;
+   }
+
+   .time-block span {
+      font-size: 42px;
+   }
+
+   .hero-title,
+   .big-text {
+      font-size: 45px;
+   }
+
+
+   .hero-text-cover {
+      p {
+         font-size: 15px;
+      }
+   }
+
+   .title {
+      font-size: 27px;
+   }
+
+   .gathering-time {
+      font-size: 28px;
+   }
+}
+
+@media (max-width: 500px) {
+   .introduction {
+      h1 {
+         font-size: 36px;
+      }
+
+      p {
+         font-size: 24px;
+      }
+   }
+}
+
+@media(max-width: 460px) {
+   .countdown-timer {
+      flex-direction: column;
+      gap: 20px;
+   }
+
+
+   .footer {
+      h2 {
+         font-size: 80px;
+      }
+   }
+}
+
+@media((max-width: 330px)) {
+   body {
+      font-size: 14px;
+   }
+
+   .time-block span {
+      font-size: 34px;
+   }
+
+   /*   .hero-title {
+      font-size: 28px;
+   } */
+
+   .title {
+      font-size: 28px;
+   }
+
+   .gathering-time {
+      font-size: 24px;
+   }
+
+   .contacts {
+      padding-bottom: 50px;
+   }
+
+   .introduction {
+      h1 {
+         font-size: 32px;
+      }
+
+      p {
+         font-size: 20px;
+      }
+   }
+}
