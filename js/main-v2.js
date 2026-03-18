@@ -1,7 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
    /* LOADER */
-
    const percentEl = document.getElementById("load-percent");
    let progress = 0;
    let isLoaded = false;
@@ -54,13 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
       introBtn.addEventListener("click", (e) => {
          e.preventDefault();
 
+         /* Remove active class from section */
          sectionName.classList.remove("active");
          htmlElement.classList.remove("active");
 
+         /* music play */
          music.play().catch((error) => {
             console.warn("Autoplay failed:", error);
          });
 
+         /* auto-scroll  */
          const speed = 1;
          let position = window.scrollY;
          let isAutoScrolling = true;
@@ -84,17 +86,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
          }
 
-         // Stop on user interaction
-         window.addEventListener("wheel", stopAutoScroll, { passive: true });
-         window.addEventListener("touchstart", stopAutoScroll, { passive: true });
-         window.addEventListener("keydown", stopAutoScroll, { passive: true });
-
          // ⏱️ Start after 3 seconds
          setTimeout(() => {
             if (isAutoScrolling) {
                autoScroll();
             }
          }, 3000);
+
+         // Stop on user interaction
+         window.addEventListener("wheel", stopAutoScroll, { passive: true });
+         window.addEventListener("touchstart", stopAutoScroll, { passive: true });
+         window.addEventListener("keydown", stopAutoScroll, { passive: true });
       });
    }
 

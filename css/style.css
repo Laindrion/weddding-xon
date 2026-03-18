@@ -472,6 +472,10 @@ p {
 .calendar {
    margin-top: -10vh;
 
+   .title {
+      margin: 40px 0 20px 5px;
+   }
+
    .calendar__wrapper {
       max-width: 600px;
       margin: 0 auto;
@@ -858,6 +862,10 @@ p {
 @media (max-width: 670px) {
    .introduction-image img {
       object-position: 0 0;
+   }
+
+   .map-description {
+      font-size: 21px;
    }
 }
 
