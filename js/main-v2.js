@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
          /* music play */
          music.play().catch((error) => {
-            console.warn("Autoplay failed:", error);
+            alert("Autoplay failed:", error);
          });
 
          /* auto-scroll  */
