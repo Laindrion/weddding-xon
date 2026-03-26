@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
          });
 
          /* auto-scroll  */
-         const speed = 1;
+         /* const speed = 1;
          let isAutoScrolling = true;
          let animationId = null;
          let autoScrollStarted = false;
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
          window.addEventListener("wheel", stopAutoScroll, { passive: true });
          window.addEventListener("touchmove", stopAutoScroll, { passive: true });
          window.addEventListener("keydown", stopAutoScroll);
-         window.addEventListener("mousedown", stopAutoScroll);
+         window.addEventListener("mousedown", stopAutoScroll); */
       });
    }
 
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
    /*** WEDDING DATE SECTION ***/
    // SET YOUR WEDDING DATE HERE (YYYY-MM-DDTHH:MM:SS)
-   const weddingDateDefault = new Date("2026-04-16T18:00:00").getTime();
+   const weddingDateDefault = new Date("2026-05-22T18:00:00").getTime();
    const weddingDateAz = new Date("2026-03-22T18:00:00").getTime();
 
    // Check if az page exists
@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
          await fetch(
-            "https://docs.google.com/forms/d/e/1FAIpQLSfwY_jwzV7tJTZZ6UfLZaqyK5QJGyYaIbAZwgel15830WgwyQ/formResponse", /* formResponse */
+            "https://docs.google.com/forms/d/1QGU2x-XB1d0t-deTa6fPZoVXfN15BxVyvwRAEhVDSrU/formResponse", /* formResponse */
             {
                method: "POST",
                mode: "no-cors",
@@ -324,7 +324,7 @@ document.addEventListener("DOMContentLoaded", () => {
          );
 
          form.reset();
-         alert("Raxmat! Sizning javobingiz qabul qilindi.");
+         alert("Спасибо! Ваш ответ отправлен.");
       } catch (err) {
          console.error("Ошибка отправки:", err);
          alert("Не удалось отправить форму.");
