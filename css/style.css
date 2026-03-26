@@ -190,7 +190,7 @@ p {
    display: none;
 
    h1 {
-     /*  font-family: "Great Vibes", cursive; */
+      /*  font-family: "Great Vibes", cursive; */
 
       font-size: 48px;
       line-height: 1.2;
@@ -417,7 +417,7 @@ p {
    text-align: center;
 
    img {
-     /*  max-width: 295px; */
+      /*  max-width: 295px; */
       /* 350px */
       width: 100%;
       height: auto;
@@ -494,7 +494,7 @@ p {
    padding-bottom: 10px;
 }
 
-.countdown{
+.countdown {
    margin: 40px auto;
 }
 
@@ -862,6 +862,10 @@ p {
 
    .wedding-day {
       padding-top: 10px;
+   }
+
+   .footer {
+      background-position: right;
    }
 }
 
