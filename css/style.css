@@ -146,9 +146,10 @@ section {
 }
 
 p {
-   font-size: 17px;
+   font-size: 26px;
    font-weight: 500;
-   font-family: 'Playfair Display', serif;
+   font-family: 'Great Vibes', serif;
+   letter-spacing: 2px;
 }
 
 #sound-toggle {
@@ -256,20 +257,6 @@ p {
       z-index: 101;
       color: #fff;
    }
-
-   /*  &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      -webkit-box-shadow: 4px -6px 72px 38px rgba(255, 255, 255, 0.2) inset;
-      -moz-box-shadow: 4px -6px 72px 38px rgba(255, 255, 255, 0.2) inset;
-      box-shadow: 4px -6px 72px 38px rgba(255, 255, 255, 0.2) inset;
-      z-index: 101;
-
-   } */
 }
 
 .introduction-image {
@@ -393,45 +380,9 @@ p {
 .hero {
    padding-top: 90px;
    /* min-height: 100vh; */
-
-   position: relative;
-   z-index: 0;
-
-   &::before {
-      content: '';
-      position: absolute;
-      left: -50px;
-      top: 95px;
-      width: 100%;
-      max-width: 200px;
-      height: 400px;
-      background-image: url(../images/flower-decor-left.jpg);
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: -1;
-      transform: rotate(125deg);
-      opacity: 0.7;
-   }
-
-   &::after {
-      content: '';
-      position: absolute;
-      right: -40px;
-      top: 95px;
-      width: 100%;
-      max-width: 200px;
-      height: 400px;
-      background-image: url(../images/flower-decor-left.jpg);
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: -1;
-      transform: scaleY(-1) rotate(-50deg);
-      opacity: 0.7;
-   }
-
 }
+
+
 
 .hero-title,
 .big-text {
@@ -479,7 +430,7 @@ p {
       max-width: 600px;
       /* max-width: 310px; */
       margin: 40px auto;
-      font-size: 18px;
+      font-size: 26px;
       letter-spacing: 2px;
    }
 
@@ -601,20 +552,6 @@ p {
 
    position: relative;
    z-index: 0;
-
-   &::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: -50px;
-      width: 300px;
-      height: 450px;
-      background-image: url('../images/decor-void.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-
-      opacity: 0.6;
-   }
 }
 
 .gathering-content {
@@ -657,31 +594,6 @@ p {
       width: 100%;
       max-width: 800px;
       margin: 0 auto;
-
-      &::before {
-         content: '';
-         position: absolute;
-         bottom: -43px;
-         left: -37px;
-         width: 180px;
-         height: 180px;
-         background-image: url("../images/frame.png");
-         background-size: contain;
-         background-repeat: no-repeat;
-      }
-
-      &::after {
-         content: '';
-         position: absolute;
-         top: -43px;
-         right: -37px;
-         width: 180px;
-         height: 180px;
-         background-image: url(../images/frame.png);
-         background-size: contain;
-         background-repeat: no-repeat;
-         transform: rotate(182deg);
-      }
    }
 
    iframe {
@@ -730,32 +642,53 @@ p {
    }
 }
 
+/* WRAPPERS */
+.wrapper-1,
+.wrapper-2 {
+   background-image: url('../images/footer-bg.jpg');
+   background-size: cover;
+   background-position: top;
+
+   position: relative;
+   z-index: 0;
+}
+
+
+.wrapper-1::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #ffffff;
+   opacity: .5;
+   z-index: -1;   
+}
+
+@media (max-width: 860px) {
+   .wrapper-1 {
+      background-position: right;
+   }
+
+   .wrapper-2 {
+      background-position: left;
+   }
+}
+
+
 /* CONTACTS SECTION */
 .contacts {
    text-align: center;
    padding-bottom: 100px;
+
+
+   background-image: url('../images/footer-bg.jpg');
+   background-size: cover;
+   background-position: top;
+
    position: relative;
    z-index: 0;
-
-   &::before {
-      content: '';
-      position: absolute;
-
-      width: 100%;
-      /* height: 200px; */
-      height: 100%;
-      background-image: url('../images/decor-flower-more.png');
-
-      bottom: 0;
-
-      left: 0;
-
-      background-size: cover;
-      background-repeat: no-repeat;
-      z-index: -1;
-
-      opacity: 0.7;
-   }
 
    #guest-form {
       max-width: 800px;
@@ -847,7 +780,6 @@ p {
    background-image: url('../images/footer-bg.jpg');
    background-size: cover;
    background-position: top;
-
 
    position: relative;
    z-index: 0;
@@ -959,7 +891,7 @@ p {
 
    .gathering-content p {
       max-width: 420px;
-      font-size: 16px;
+      font-size: 26px;
       line-height: 1.5;
       color: #555;
    }
@@ -1029,7 +961,7 @@ p {
 
    .hero-text-cover {
       p {
-         font-size: 15px;
+         font-size: 26px;
       }
    }
 
