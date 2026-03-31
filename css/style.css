@@ -379,9 +379,27 @@ p {
 
 .hero {
    padding-top: 90px;
-   /* min-height: 100vh; */
+   min-height: 100vh;
+
+   background-image: url('../images/footer-bg.jpg');
+   background-size: cover;
+   background-position: right;
+
+   position: relative;
+   z-index: 0;
 }
 
+.hero::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   opacity: .4;
+   z-index: -1;
+}
 
 
 .hero-title,
@@ -484,6 +502,25 @@ p {
 /* COUNTDOWN SECTION */
 .wedding-day {
    padding-bottom: 10px;
+
+   background-image: url('../images/footer-bg.jpg');
+   background-size: cover;
+   background-position: left;
+
+   position: relative;
+   z-index: 0;
+}
+
+.wedding-day::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   opacity: .4;
+   z-index: -1;
 }
 
 .countdown {
@@ -601,6 +638,18 @@ p {
    }
 }
 
+.map::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   opacity: .4;
+   z-index: -1;
+}
+
 .map-description {
    position: relative;
    z-index: 0;
@@ -653,8 +702,11 @@ p {
    z-index: 0;
 }
 
+.wrapper-1 {
+   background: none;
+}
 
-.wrapper-1::before {
+/* .wrapper-1::before {
    content: '';
    position: absolute;
    top: 0;
@@ -663,8 +715,8 @@ p {
    height: 100%;
    background: #ffffff;
    opacity: .5;
-   z-index: -1;   
-}
+   z-index: -1;
+} */
 
 @media (max-width: 860px) {
    .wrapper-1 {
@@ -775,7 +827,7 @@ p {
    width: 100%;
    height: 100vh;
 
-   color: #fff;
+   color: #000;
 
    background-image: url('../images/footer-bg.jpg');
    background-size: cover;
@@ -800,7 +852,7 @@ p {
    left: 0;
    width: 100%;
    height: 100%;
-   background: #000;
+   background: #fff;
    opacity: .4;
    z-index: -1;
 }
@@ -876,6 +928,22 @@ p {
 
 /* MEDIA QUERIES */
 @media (max-width: 870px) {
+   .hero {
+      padding-top: 15px;
+      padding-bottom: 0px;
+      min-height: 100vh;
+   }
+
+   .hero-text-cover p {
+      max-width: 310px;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   .wedding-day {
+      padding-top: 10px;
+   }
+
    .gathering-content {
       display: flex;
       flex-direction: column;
@@ -911,22 +979,6 @@ p {
 
       width: 40px;
       height: 40px;
-   }
-
-   .hero {
-      padding-top: 40px;
-      padding-bottom: 0px;
-      min-height: 100%;
-   }
-
-   .hero-text-cover p {
-      max-width: 310px;
-      margin-left: auto;
-      margin-right: auto;
-   }
-
-   .wedding-day {
-      padding-top: 10px;
    }
 
    .footer {
