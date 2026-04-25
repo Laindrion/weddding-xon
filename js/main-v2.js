@@ -62,52 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Autoplay failed:", error);
          });
 
-         /* auto-scroll  */
-         /* const speed = 1;
-         let isAutoScrolling = true;
-         let animationId = null;
-         let autoScrollStarted = false;
-
-         function autoScroll() {
-            if (!isAutoScrolling) return;
-
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (currentScroll >= maxScroll) {
-               stopAutoScroll();
-               return;
-            }
-
-            window.scrollBy(0, speed);
-            animationId = requestAnimationFrame(autoScroll);
-         }
-
-         function startAutoScroll() {
-            if (autoScrollStarted || !isAutoScrolling) return;
-            autoScrollStarted = true;
-            autoScroll();
-         }
-
-         function stopAutoScroll() {
-            isAutoScrolling = false;
-
-            if (animationId) {
-               cancelAnimationFrame(animationId);
-               animationId = null;
-            }
-         }
-
-         // Start after 3 seconds
-         setTimeout(() => {
-            startAutoScroll();
-         }, 3000);
-
-         // Stop only on real user interaction
-         window.addEventListener("wheel", stopAutoScroll, { passive: true });
-         window.addEventListener("touchmove", stopAutoScroll, { passive: true });
-         window.addEventListener("keydown", stopAutoScroll);
-         window.addEventListener("mousedown", stopAutoScroll); */
       });
    }
 
